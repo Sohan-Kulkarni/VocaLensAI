@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+.npm-cache/
+frontend/.npm-cache/
+frontend/vite.*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# App data
+backend/*.db
+backend/vocalens.db
+backend/uploads/*
+backend/reports/*
+!backend/uploads/.gitkeep
+!backend/reports/.gitkeep
+
+# Environment
+.env
+backend/.env
+frontend/.env
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

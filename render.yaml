@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: vocalens-ai-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 1440
+      - key: DATABASE_URL
+        value: sqlite:///./vocalens.db
+      - key: BACKEND_CORS_ORIGINS
+        value: https://your-frontend-domain.vercel.app
+      - key: ENABLE_MOCK_TRANSCRIPTION
+        value: true
+      - key: WHISPER_MODEL_SIZE
+        value: base
